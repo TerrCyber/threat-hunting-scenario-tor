@@ -191,12 +191,16 @@ The device was isolated for further investigation and the user's direct manager 
 
 # MITRE ATT&CK Mapping
 Technique	ID
+
 • Proxy	T1090
+
 • Web Protocols	T1071
+
 • Encrypted Channel	T1573
+
 • Ingress Tool Transfer	T1105
 
-#Tools Used
+# Tools Used
 
 • Microsoft Sentinel
 
