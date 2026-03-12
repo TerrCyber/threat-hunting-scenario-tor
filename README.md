@@ -7,21 +7,7 @@
 This project documents a **threat hunting investigation** performed using **Microsoft Defender for Endpoint and Microsoft Sentinel** to detect unauthorized TOR browser installation and usage on a workstation.
 
 The goal of this investigation was to determine whether TOR was installed or used to bypass organizational security controls and access restricted websites.
-## Investigation Workflow
 
-TOR Installer Download
-         ↓
-
-TOR Files Extracted
-         ↓
-
-TOR Browser Execution
-         ↓
-
-TOR Processes Spawned (tor.exe / firefox.exe)
-         ↓
-
-Outbound TOR Network Connections
 ---
 
 # Scenario
