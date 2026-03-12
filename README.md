@@ -1,6 +1,7 @@
 <img width="1200" height="725" alt="image" src="https://github.com/user-attachments/assets/76ad54b0-18a8-4ace-89c2-2e2c13ca66c9" />
 
 # Threat Hunt Report: Unauthorized TOR Browser Usage
+- [Scenario Creation](https://github.com/TerrCyber/threat-hunting-scenario-tor/blob/main/threat-hunting-scenario-tor-event-creation)
 
 ## Overview
 This project documents a **threat hunting investigation** performed using **Microsoft Defender for Endpoint and Microsoft Sentinel** to detect unauthorized TOR browser installation and usage on a workstation.
