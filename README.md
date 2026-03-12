@@ -47,7 +47,7 @@ The **DeviceFileEvents** table was queried to identify TOR-related file activity
 ```kql
 DeviceFileEvents
 | where DeviceName == "terr-main-test-"
-| where InitiatingProcessAccountName contains "REDACTED"
+| where InitiatingProcessAccountName contains "terrcyber"
 | where FileName contains "tor"
 | where Timestamp >= datetime(2026-03-11T23:48:11.3476705Z)
 | project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256, Account = InitiatingProcessAccountName
