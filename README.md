@@ -1,13 +1,27 @@
 <img width="1200" height="725" alt="image" src="https://github.com/user-attachments/assets/76ad54b0-18a8-4ace-89c2-2e2c13ca66c9" />
 
-# Threat Hunt Report: Unauthorized TOR Browser Usage
+# SOC Threat Hunt Investigation: Unauthorized TOR Browser Usage Detection
 - [Scenario Creation](https://github.com/TerrCyber/threat-hunting-scenario-tor/blob/main/threat-hunting-scenario-tor-event-creation)
 
 ## Overview
 This project documents a **threat hunting investigation** performed using **Microsoft Defender for Endpoint and Microsoft Sentinel** to detect unauthorized TOR browser installation and usage on a workstation.
 
 The goal of this investigation was to determine whether TOR was installed or used to bypass organizational security controls and access restricted websites.
+## Investigation Workflow
 
+TOR Installer Download
+         ↓
+
+TOR Files Extracted
+         ↓
+
+TOR Browser Execution
+         ↓
+
+TOR Processes Spawned (tor.exe / firefox.exe)
+         ↓
+
+Outbound TOR Network Connections
 ---
 
 # Scenario
@@ -39,6 +53,28 @@ The investigation focused on identifying TOR-related indicators using three prim
 | DeviceNetworkEvents | Detect TOR network communication |
 
 ---
+## Threat Hunting Methodology
+
+Threat hunting is a proactive security practice where analysts search through endpoint, network, and system telemetry to identify malicious activity that may evade traditional security controls. :contentReference[oaicite:1]{index=1}
+
+This investigation followed a hypothesis-driven threat hunting approach:
+
+1. **Hypothesis**
+   - A user may have installed and used the TOR browser to bypass network monitoring controls.
+
+2. **Data Sources**
+   - Microsoft Defender for Endpoint telemetry
+   - Microsoft Sentinel Log Analytics
+
+3. **Log Sources Investigated**
+   - DeviceFileEvents
+   - DeviceProcessEvents
+   - DeviceNetworkEvents
+
+4. **Goal**
+   - Detect TOR installation
+   - Confirm TOR execution
+   - Confirm TOR network activity
 
 # Step 1 — TOR File Discovery
 
